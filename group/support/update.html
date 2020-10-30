@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>アップデート - フリー・オープンソースのグループウェアL01</title>
+<meta name="keywords" content="グループウェア,フリー,無料,オープンソース,PHP,アップデート,update,更新,アップグレード,修正,パッチ" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link type="text/css" rel="stylesheet" href="../style.css" />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-9469573744565627",enable_page_level_ads:true});</script>
+</head>
+<body>
+<div class="header">
+<h1><a href="../"><img src="../images/title.gif" alt="フリー・オープンソースのグループウェア" /></a></h1>
+<ul>
+<li><a href="../support/faq.html">よくあるご質問</a></li>
+</ul>
+</div>
+<div class="navigation">
+<ul>
+<li><a href="../">HOME</a></li>
+<li><a href="../system/">機能</a></li>
+<li><a href="../download.html">ダウンロード</a></li>
+<li><a href="../support/">サポート</a></li>
+</ul>
+</div>
+<div class="wrapper">
+<div class="container">
+<h2>アップデート手順</h2>
+<p>
+現在のアプリケーションを最新のバージョンに更新する方法です。<br />
+1. データのバックアップを取ります。<br />
+2. 最新版をサーバーにアップロードし、セットアップを実行します。<br />
+3. ファイルを移行し、パーミションを変更します。
+</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- content -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9469573744565627"
+     data-ad-slot="9536368732"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h3>データのバックアップ</h3>
+<p>
+現在のデータのバックアップを取ります。
+</p>
+<h4>1. データベースのバックアップ</h4>
+<p>
+使用しているデータベースがMySQLの場合はデータベースのバックアップを取ります。<br />
+データベースがSQLiteの場合は group/application/database/group.sqlite2 がデータベースファイルです。<br />
+</p>
+<h4>2. ファイル共有や添付ファイルでアップロードされたファイルのバックアップ</h4>
+<p>
+ファイル共有や添付ファイルでアップロードされたファイルは<br />
+group/application/upload 以下に保存されています。
+</p>
+<h4>3. 設定ファイルのバックアップ</h4>
+<p>
+設定ファイルは group/application/config.php です。
+</p>
+<h3>最新版のアップロードとセットアップの実行</h3>
+<p>
+最新版の圧縮ファイルを解凍し、Webサーバーの任意のディレクトリにアップロードします。<br />
+このとき、現在のアプリケーションのディレクトリ名を変更するか、最新版のディレクトリ名を
+別の名前にしてアップロードします。<br />
+(上書きはおすすめしません。)
+</p>
+<p>
+group/application/config.php のパーミションを 606 または 666 に変更します。<br />
+</p>
+<p>
+最新版のセットアップページ group/setup.php にブラウザでアクセスしてください。<br />
+「セットアップの種類」で「アップデート」を選択してサーバー情報を入力し、「実行」をクリックします。<br />
+<a href="setup.html#inputitem">入力項目の詳細はこちらを参照してください。</a><br />
+セットアップが開始されます。<br />
+セットアップが完了したら「<span class="emphasis">group/setup.php</span>」を削除します。
+</p>
+<h3>ファイルの移行とパーミションの変更</h3>
+<p>
+group/application/upload内の全てのディレクトリ（フォルダ）とファイルを最新版に上書きします。<br />
+データベースがSQLiteの場合は、group/application/database/group.sqlite2 を最新版に上書きします。<br />
+移行したファイル/ディレクトリのパーミションを変更します。<br />
+(サーバーのOSがWindowsの場合、またはサーバーの環境によってはこの手順は必要ありません。)
+</p>
+<table class="list" cellspacing="0"><tbody>
+<tr><th>ファイル/ディレクトリ</th><th>パーミション</th></tr>
+<tr><th>group/application/config.php</th><td>604 または 644</td></tr>
+<tr><th>group/application/upload/内のすべてのディレクトリ<br />（forum,message,project,storage,temporary）</th><td>707 または 777</td></tr>
+<tr><th>データベースがSQLiteの場合は<br />group/application/database/group.sqlite2</th><td>606 または 666</td></tr>
+</tbody></table>
+<p>
+以上でアップデートは終了です。<br />
+最新版のディレクトリ名を現在稼動中のアプリケーションとは別の名前をつけてアップロードした場合は
+最新版のディレクトリ名を現在稼動中のアプリケーションのディレクトリ名に変更します。<br />
+ログインし、動作確認してください。
+</p>
+<p>
+<a href="../support/">サポートページトップに戻る</a>
+</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- content -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9469573744565627"
+     data-ad-slot="9536368732"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- side -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9469573744565627"
+     data-ad-slot="7856385743"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="footer">
+Copyright(c) limitlink,Inc. All Rights Reserved.
+</div>
+</body>
+</html>
