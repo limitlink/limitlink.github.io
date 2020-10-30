@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>セットアップ - フリー・オープンソースの顧客管理システムL03</title>
+<meta name="keywords" content="顧客管理,システム,フリー,無料,オープンソース,PHP,MySQL,SQLite,サポート,セットアップ,インストール,デプロイ,動作環境" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link type="text/css" rel="stylesheet" href="./style.css" />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-9469573744565627",enable_page_level_ads:true});</script>
+</head>
+<body>
+<div class="header">
+<h1><a href="./"><img src="./images/title.gif" alt="フリー・オープンソースの顧客管理システム" /></a></h1>
+</div>
+<div class="navigation">
+<ul>
+<li><a href="./">HOME</a></li>
+<li><a href="./download.html">ダウンロード</a></li>
+<li><a href="./support.html">サポート</a></li>
+</ul>
+</div>
+<div class="wrapper">
+<div class="container">
+<h2>セットアップ手順</h2>
+<h3>動作環境</h3>
+<p>
+Webサーバが稼動し、PHPがインストールされている環境
+</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- content -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9469573744565627"
+     data-ad-slot="9536368732"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<table class="list" cellspacing="0"><tbody>
+<tr><th>PHP</th><td>PHP4.4以降<br />mbstringが有効でshort_open_tag=On、register_globals=Offの環境</td></tr>
+<tr><th>データベース</th><td>MySQL4.0以降、SQLite2</td></tr>
+<tr><th>ブラウザ</th><td>GoogleChrome、Safari、Firefox、IE8以降</td></tr>
+<tr><th>文字コード</th><td>UTF-8</td></tr>
+</tbody></table>
+<p>
+基本的にWebサーバでPHPが動作し、データベースが使用できる環境なら利用可能です。<br />
+InternetExplorerはブラウザ自体にバグが多いため他のブラウザをお勧めします。<br />
+</p>
+<h3>アプリケーションの設置</h3>
+<p>
+ダウンロードした圧縮ファイルを解凍し、Webサーバーの任意のディレクトリにアップロードしてください。
+</p>
+<h3>データベースの作成</h3>
+<p>
+MySQLを使用する場合は予めデータベースを作成してください。<br />
+レンタルサーバーなどでデータベースが既に作成されている場合や、既存のデータベースを使用する場合は新たに作成する必要はありません。<br />
+SQLiteを使用する場合はこの手順は必要ありません。
+</p>
+<h3>パーミションの変更</h3>
+<p>
+アップロードしたファイル/ディレクトリのパーミションを変更します。<br />
+(サーバーのOSがWindowsの場合、またはサーバーの環境によってはこの手順は必要ありません。)
+</p>
+<table class="list" cellspacing="0"><tbody>
+<tr><th>ファイル/ディレクトリ</th><th>パーミション</th></tr>
+<tr><th>customer/application/config.php</th><td>606 または 666</td></tr>
+<tr><th>データベースがSQLiteの場合は<br />customer/application/database/database.sqlite2</th><td>606 または 666</td></tr>
+</tbody></table>
+<h3>セットアップの実行</h3>
+<p>
+セットアップページ customer/setup.php にブラウザでアクセスしてください。<br />
+(ドメインが http://example.com/、設置した顧客管理システムのディレクトリ名が customer の場合は
+http://example.com/customer/setup.php にアクセスします。)
+</p>
+<p>
+サーバー情報と管理者情報を入力し、「実行」をクリックします。<br />
+セットアップが開始されます。<br />
+<a href="setup.html#inputitem">入力項目の詳細はこちらを参照してください。</a>
+</p>
+<h3>パーミションの変更とセットアップファイルの削除</h3>
+<p>
+設定ファイル（customer/application/config.php）のパーミションを 604 または 644 に戻します。<br />
+setup.phpをサーバーから削除してください。<br />
+以上でセットアップは終了です。<br />
+「customer/」にアクセスし、ログインしてください。
+</p>
+<h2 id="inputitem">セットアップ入力項目の詳細</h2>
+<h3>セットアップの種類</h3>
+<p>
+新規のセットアップかアップデート用のセットアップかを選択します。
+</p>
+<h3>データベースの種類</h3>
+<p>
+使用するデータベースを選択します。
+</p>
+<h3>データベースの情報</h3>
+<p>
+MySQLを使用する場合はデータベースの情報を入力してください。
+</p>
+<table class="list" cellspacing="0"><tbody>
+<tr><th>データベースのホスト名</th><td>データベースのホスト名を入力します。</td></tr>
+<tr><th>データベース名</th><td>データベース名を入力します。</td></tr>
+<tr><th>データベースユーザー名</th><td>データベースに接続するためのユーザー名を入力します。</td></tr>
+<tr><th>データベースパスワード</th><td>データベースに接続するためのパスワードを入力します。</td></tr>
+<tr><th>テーブル接頭辞</th><td>「 customer_ 」のままか、必要に応じて任意の値を入力します。</td></tr>
+</tbody></table>
+<h3>管理者の情報</h3>
+<table class="list" cellspacing="0"><tbody>
+<tr><th>ユーザーID</th><td>任意のユーザーIDを入力します。</td></tr>
+<tr><th>パスワード</th><td>上記のユーザーIDでログインするためのパスワードを入力します。</td></tr>
+<tr><th>名前</th><td>管理者の名前を入力します。</td></tr>
+<tr><th>グループ名</th><td>管理者のグループ名を入力します。</td></tr>
+</tbody></table>
+<p>
+<a href="./support.html">サポートページトップに戻る</a>
+</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- content -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9469573744565627"
+     data-ad-slot="9536368732"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- side -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9469573744565627"
+     data-ad-slot="7856385743"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="footer">
+Copyright(c) limitlink,Inc. All Rights Reserved.
+</div>
+</body>
+</html>
